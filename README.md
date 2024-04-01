@@ -1,4 +1,6 @@
-**Description:**
+**This program allows users to select a mathematical problem from a menu and plots the sanswer. Users can choose from various problems, including polynomials and trigonometric functions, and visualize the results individually or all at once.**
+
+**Process:**
 
 The code starts by importing the matplotlib.pyplot lib to access graphing for the code. A menu of choices(problems 1 to 10) is displayed to the user using the print() function. The user is prompted to input their choice by entering a number corresponding to the problem they want to graph, or they can choose option 11 to plot all problems at once. The user's input is stored in the variable choice using the input() function. Ten functions (problem1() to problem10()) are defined, each representing a specific mathematical problem. Each function reads values of x from a file named xvalue.txt, computes the corresponding solution(s) based on the selected problem's formula, and stores the result(s) in a list. Additionally, the calculated results are saved into separate output files (output1.txt to output10.txt). Conditional statements (if statements) are used to determine the user's choice and execute the corresponding block of code. If the user selects a specific problem (choices 1 to 10), the script calls the corresponding problem-solving function and generates a plot of the results using matplotlib.pyplot. If the user selects option 11 to plot all problems, a dedicated function named displayPlot() is defined to create a plot displaying the results of all 10 problems.
 
