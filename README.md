@@ -1,233 +1,61 @@
-import matplotlib.pyplot as plt
+**Description:**
 
-print ("Pick a Problem to Plot: ")#Menu of choices
-print ("1 - Problem 1: x^2 + 7x + 2")
-print ("2 - Problem 2: 3x + 2")
-print ("3 - Problem 3: x^2")
-print ("4 - Problem 4: x^3")
-print ("5 - Problem 5: x^5")
-print ("6 - Problem 6: x^3 + 2x^2 +  x + 10")
-print ("7 - Problem 7: x^4 - 3x^3 + 2x^2 - x + 11")
-print ("8 - Problem 8: sin(x)")
-print ("9 - Problem 9: cos(x)")
-print ("10 - Problem 10: x^5 + 4x^4 + x^3 - 2x^2 + 100")
-print ("11 - Plot All Problem")
-print ()
-choice = input("Enter your choice: ")#enter ng choice from 1 to 11 
+The code starts by importing the matplotlib.pyplot lib to access graphing for the code. A menu of choices is displayed to the user using the print() function. This menu lists 10 mathematical problems labeled from Problem 1 to Problem 10. The user is prompted to input their choice by entering a number corresponding to the problem they want to explore, or they can choose option 11 to plot all problems at once. The user's input is stored in the variable choice using the input() function. Ten functions (problem1() to problem10()) are defined, each representing a specific mathematical problem. Each function reads values of x from a file named xvalue.txt, computes the corresponding solution(s) based on the selected problem's formula, and stores the result(s) in a list. Additionally, the calculated results are saved into separate output files (output1.txt to output10.txt). Conditional statements (if statements) are used to determine the user's choice and execute the corresponding block of code. If the user selects a specific problem (choices 1 to 10), the script calls the corresponding problem-solving function and generates a plot of the results using matplotlib.pyplot. If the user selects option 11 to plot all problems, a dedicated function named displayPlot() is defined to create a plot displaying the results of all 10 problems. Within this function, multiple plt.plot() functions are called to plot the solutions of each problem, distinguishing them with different colors. Finally, labels are added to the plot to indicate the axes (value of x and corresponding answer), and the plot is displayed using plt.show().
 
-def problem1(): 
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append((Numbers * Numbers) + (7 * Numbers) + 2)#formula to solve the problem
-    with open('output1.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')#then iconvert into strings
-    return result
-problem1()
 
-def problem2():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append((3 * Numbers) + 2)#formula to solve the problem
-    with open('output2.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem2()
+**Here are the 10 graphs for each problem and the graph that contains all problems:**
 
-def problem3():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append(Numbers * Numbers)#formula to solve the problem
-    with open('output3.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem3()
+**1. Problem 1**
 
-def problem4():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append(Numbers * Numbers * Numbers)#formula to solve the problem
-    with open('output4.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem4()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/894b1a4d-68a8-4832-a1ca-eb8cf5da4357)
 
-def problem5():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append(Numbers * Numbers * Numbers * Numbers * Numbers)#formula to solve the problem
-    with open('output5.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem5()
 
-def problem6():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append((Numbers * Numbers * Numbers) + (2 * (Numbers*Numbers)) + Numbers + 10)#formula to solve the problem
-    with open('output6.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem6()
+**2. Problem 2**
 
-def problem7():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append((Numbers * Numbers * Numbers * Numbers) - (3 * (Numbers*Numbers*Numbers)) + (2*(Numbers*Numbers)) - Numbers + 11)#formula to solve the problem
-    with open('output7.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem7()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/48f50bdc-58b8-45f0-a0d5-861e5dfe3d81)
 
-def problem8():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append(0.01745240644 * Numbers)#formula to solve the problem
-    with open('output8.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem8()
 
-def problem9():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append(0.9998476952 * Numbers)#formula to solve the problem
-    with open('output9.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem9()
+**3. Problem 3**
 
-def problem10():
-    result = []
-    file = open('xvalue.txt','r')#read numbers sa txt file
-    for x in file.readlines():
-        Numbers = int(x)#convert sa int
-        result.append((Numbers * Numbers * Numbers * Numbers * Numbers) + (4 * (Numbers*Numbers*Numbers*Numbers)) + (Numbers*Numbers*Numbers) - (2*(Numbers*Numbers)) + 100)#formula to solve the problem
-    with open('output10.txt', 'w') as output_file:#save the answer sa txt file
-        for res in result:
-            output_file.write(str(res) + '\n')
-    return result
-problem10()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/294f3d1e-0cf4-469d-af0e-aefcf0382fd9)
 
-if choice == "1":#maplot ang answers if 1 ang piliin
-    def displayPlot():
-        plt.plot(problem1(), "go", label = "Problem 1")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
 
-if choice == "2":
-    def displayPlot():
-        plt.plot(problem2(), "go", label = "Problem 2")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+**4. Problem 4**
 
-if choice == "3":
-    def displayPlot():
-        plt.plot(problem3(), "go", label = "Problem 3")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/6155c23e-4167-402b-b694-1ec3a7760931)
 
-if choice == "4":
-    def displayPlot():
-        plt.plot(problem4(), "go", label = "Problem 4")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
 
-if choice == "5":
-    def displayPlot():
-        plt.plot(problem5(), "go", label = "Problem 5")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+**5. Problem 5**
 
-if choice == "6":
-    def displayPlot():
-        plt.plot(problem6(), "go", label = "Problem 6")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/79b0ccd3-d2c5-4623-b215-5103079a5875)
 
-if choice == "7":
-    def displayPlot():
-        plt.plot(problem7(), "go", label = "Problem 7")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
 
-if choice == "8":
-    def displayPlot():
-        plt.plot(problem8(), "go", label = "Problem 8")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+**6. Problem 6**
 
-if choice == "9":
-    def displayPlot():
-        plt.plot(problem9(), "go", label = "Problem 9")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/560d0840-39bd-45d4-9fb3-80fbd640150a)
 
-if choice == "10":
-    def displayPlot():
-        plt.plot(problem10(), "go", label = "Problem 10")
-        plt.xlabel("Value of X")
-        plt.ylabel("Answer")
-        plt.show()
-    displayPlot()
+**7. Problem 7**
 
-if choice == "11":#maplot lahat ng problems from 1 to 10
-    def displayPlot():
-        plt.plot(problem1(), "r", label = "Problem 1")
-        plt.plot(problem2(), "b", label = "Problem 2")
-        plt.plot(problem3(), "go", label = "Problem 3")
-        plt.plot(problem4(), "r", label = "Problem 4")
-        plt.plot(problem5(), "b", label = "Problem 5")
-        plt.plot(problem6(), "go", label = "Problem 6")
-        plt.plot(problem7(), "r", label = "Problem 7")
-        plt.plot(problem8(), "b", label = "Problem 8")
-        plt.plot(problem9(), "go", label = "Problem 9")
-        plt.plot(problem10(), "r", label = "Problem 10")
-        plt.ylabel("Answer")
-        plt.xlabel("Value of X")
-        plt.show()
-    displayPlot()
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/7e55a4e6-b1b5-42c2-b103-a95aa0c0500d)
+
+**8. Problem 8**
+
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/7eb87591-a675-45c5-bd0c-69c1b84f173c)
+
+**9. Problem 9**
+
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/359eec8a-263e-4ea4-a11c-655a7f7c9bac)
+
+**10. Problem 10**
+
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/48883f41-8e6d-434b-a62c-4e0784fe8b6b)
+
+**11. All Problems**
+
+![image](https://github.com/CharlesJustinAbellera/DataStructuresAndAlgorithm/assets/143912877/8a28ea30-e01c-4cee-8807-8eab68fa1fea)
+
+
+
+
+
+
